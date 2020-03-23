@@ -1,9 +1,0 @@
-rm(list = ls())
-setwd("~/Desktop/LMU/Prof. Marin/Project/ifr")
-
-library("readxl")
-continents <- c("Africa", "America", "AustralAsia", "CEEurope", "WesternEurope")
-
-for (i in continents) {
-robotics_i <- read_excel("robotics_data.xlsx", sheet = OperationalStock_i)
-}
