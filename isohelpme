@@ -1,0 +1,9 @@
+for (var in c("spec_offshoring", "offshoring", "cons_COMP_EUR", "cons_EMP", "cons_EMPE", "cons_H_EMPE", "cons_LAB_EUR", "cons_VA_EUR", ##
+              "prod_COMP_EUR", "prod_EMP", "prod_EMPE", "prod_H_EMPE", "prod_LAB_EUR", "prod_VA_EUR", "cons_robot_intensity", "prod_robot_intensity", ##
+              "cons_uncertainty", "prod_uncertainty", "cons_polsta", "prod_polsta", "cons_h_wage", "prod_h_wage")) {
+  
+  lagged_variable <- paste(var, "l1", sep = ".")
+  data_temp[, a := shift(as.name(var), 1L), by = id]
+  setnames(data_temp, "a", lagged_variable)
+  
+}
